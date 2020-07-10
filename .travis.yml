@@ -8,11 +8,11 @@ script:
 
 #push sur docker hub
 before_deploy:
-    - docker login -u DOCKER_USERNAME -p DOCKER_PASSWORD
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 deploy:
     provider: script
-    script: docker push DOCKER_USERNAME/nodedockertravistuto 
+    script: docker push $DOCKER_USERNAME/nodedockertravistuto 
     on:
         branch: master
 #fin du push sur docker hub
