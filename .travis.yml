@@ -7,10 +7,10 @@ script:
     - docker images 175152/nodeDockerTravisTuto #par contre pour l'image apparament balec
 
 before_deploy:
-    - docker login -u 175152 -p Jcsa9294.
+    - docker login -u <dockerUsername> -p <dockerPWD>
 
 deploy:
     provider: script
-    script: docker push 175152/nodedockertravistuto
+    script: docker push <dockerUsername>/nodedockertravistuto
     on:
         branch: master
