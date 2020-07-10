@@ -6,11 +6,13 @@ script:
     - docker build -t 175152/nodedockertravistuto . #invalid reference format: repository name must be lowercase
     - docker images 175152/nodeDockerTravisTuto #par contre pour l'image apparament balec
 
+#push sur docker hub
 before_deploy:
     - docker login -u DOCKER_USERNAME -p DOCKER_PASSWORD
 
 deploy:
     provider: script
-    script: docker push DOCKER_USERNAME/nodedockertravistuto
+    script: docker push DOCKER_USERNAME/nodedockertravistuto 
     on:
         branch: master
+#fin du push sur docker hub
