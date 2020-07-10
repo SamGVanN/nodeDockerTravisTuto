@@ -1,7 +1,7 @@
-sudo : required
+sudo: required
 services:
     - docker
 
-    script:
-    - docker build -t SamGVanN/nodeDockerTravisTuto .
-    - docker images SamGVanN/nodeDockerTravisTuto
+script:
+    - docker build -t 175152/nodeDockerTravisTuto .
+    - docker images 175152/nodeDockerTravisTuto
