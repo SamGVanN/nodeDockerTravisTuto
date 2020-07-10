@@ -4,4 +4,13 @@ services:
 
 script:
     - docker build -t 175152/nodedockertravistuto . #invalid reference format: repository name must be lowercase
-    - docker images 175152/nodeDockerTravisTuto
+    - docker images 175152/nodeDockerTravisTuto #par contre pour l'image apparament balec
+
+before_deploy:
+    - docker login -u 175152 -p Jcsa9294.
+
+deploy:
+    provider: script
+    script: docker push 175152/nodedockertravistuto
+    on:
+        branch: master
